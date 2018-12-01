@@ -8,20 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		DB27238521ACA73D000CDBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27238421ACA73D000CDBD5 /* AppDelegate.swift */; };
-		DB27238721ACA73D000CDBD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27238621ACA73D000CDBD5 /* ViewController.swift */; };
-		DB27238A21ACA73D000CDBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27238821ACA73D000CDBD5 /* Main.storyboard */; };
 		DB27238C21ACA73E000CDBD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB27238B21ACA73E000CDBD5 /* Assets.xcassets */; };
 		DB27238F21ACA73E000CDBD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27238D21ACA73E000CDBD5 /* LaunchScreen.storyboard */; };
+		DB27239721ACA77B000CDBD5 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239621ACA77B000CDBD5 /* Start.storyboard */; };
+		DB27239D21ACA788000CDBD5 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239821ACA787000CDBD5 /* Discover.storyboard */; };
+		DB27239E21ACA788000CDBD5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239921ACA787000CDBD5 /* Profile.storyboard */; };
+		DB27239F21ACA788000CDBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239A21ACA787000CDBD5 /* Main.storyboard */; };
+		DB2723A021ACA788000CDBD5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239B21ACA787000CDBD5 /* Home.storyboard */; };
+		DB2723A121ACA788000CDBD5 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239C21ACA788000CDBD5 /* Add.storyboard */; };
+		DB2723A821ACA859000CDBD5 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A221ACA858000CDBD5 /* DiscoverViewController.swift */; };
+		DB2723A921ACA859000CDBD5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A321ACA858000CDBD5 /* SignUpViewController.swift */; };
+		DB2723AA21ACA859000CDBD5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A421ACA859000CDBD5 /* ProfileViewController.swift */; };
+		DB2723AB21ACA859000CDBD5 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A521ACA859000CDBD5 /* AddViewController.swift */; };
+		DB2723AC21ACA859000CDBD5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A621ACA859000CDBD5 /* HomeViewController.swift */; };
+		DB2723AD21ACA859000CDBD5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A721ACA859000CDBD5 /* SignInViewController.swift */; };
+		DB2723B121ACAA6D000CDBD5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB2723B021ACAA6C000CDBD5 /* GoogleService-Info.plist */; };
+		DB2723B621ACB559000CDBD5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723B521ACB559000CDBD5 /* AuthService.swift */; };
+		DBAA071E21B1497500F8998F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA071D21B1497500F8998F /* Post.swift */; };
+		F27DF32A6161193471BBEB5E /* Pods_VintageBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01B477A7F9013F78A7E560 /* Pods_VintageBooks.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D01B477A7F9013F78A7E560 /* Pods_VintageBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VintageBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A645E0D58AD6936FE07326BE /* Pods-VintageBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VintageBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-VintageBooks/Pods-VintageBooks.release.xcconfig"; sourceTree = "<group>"; };
+		AF72999D294B40820A992446 /* Pods-VintageBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VintageBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VintageBooks/Pods-VintageBooks.debug.xcconfig"; sourceTree = "<group>"; };
 		DB27238121ACA73D000CDBD5 /* VintageBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VintageBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB27238421ACA73D000CDBD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB27238621ACA73D000CDBD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DB27238921ACA73D000CDBD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB27238B21ACA73E000CDBD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB27238E21ACA73E000CDBD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB27239021ACA73E000CDBD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB27239621ACA77B000CDBD5 /* Start.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		DB27239821ACA787000CDBD5 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		DB27239921ACA787000CDBD5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		DB27239A21ACA787000CDBD5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DB27239B21ACA787000CDBD5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		DB27239C21ACA788000CDBD5 /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
+		DB2723A221ACA858000CDBD5 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		DB2723A321ACA858000CDBD5 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DB2723A421ACA859000CDBD5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DB2723A521ACA859000CDBD5 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		DB2723A621ACA859000CDBD5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DB2723A721ACA859000CDBD5 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		DB2723B021ACAA6C000CDBD5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB2723B521ACB559000CDBD5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DBAA071D21B1497500F8998F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +59,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F27DF32A6161193471BBEB5E /* Pods_VintageBooks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BBFF01B2678C03925572CE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D01B477A7F9013F78A7E560 /* Pods_VintageBooks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D600D243CF84BD3326996A87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF72999D294B40820A992446 /* Pods-VintageBooks.debug.xcconfig */,
+				A645E0D58AD6936FE07326BE /* Pods-VintageBooks.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DB27237821ACA73D000CDBD5 = {
 			isa = PBXGroup;
 			children = (
 				DB27238321ACA73D000CDBD5 /* VintageBooks */,
 				DB27238221ACA73D000CDBD5 /* Products */,
+				D600D243CF84BD3326996A87 /* Pods */,
+				9BBFF01B2678C03925572CE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +105,50 @@
 			isa = PBXGroup;
 			children = (
 				DB27238421ACA73D000CDBD5 /* AppDelegate.swift */,
-				DB27238621ACA73D000CDBD5 /* ViewController.swift */,
-				DB27238821ACA73D000CDBD5 /* Main.storyboard */,
+				DB2723B721ACB562000CDBD5 /* Models */,
+				DB2723AF21ACA9CA000CDBD5 /* ViewControllers */,
+				DB2723AE21ACA9B4000CDBD5 /* Storyboards */,
 				DB27238B21ACA73E000CDBD5 /* Assets.xcassets */,
 				DB27238D21ACA73E000CDBD5 /* LaunchScreen.storyboard */,
+				DB2723B021ACAA6C000CDBD5 /* GoogleService-Info.plist */,
 				DB27239021ACA73E000CDBD5 /* Info.plist */,
 			);
 			path = VintageBooks;
+			sourceTree = "<group>";
+		};
+		DB2723AE21ACA9B4000CDBD5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DB27239621ACA77B000CDBD5 /* Start.storyboard */,
+				DB27239A21ACA787000CDBD5 /* Main.storyboard */,
+				DB27239B21ACA787000CDBD5 /* Home.storyboard */,
+				DB27239C21ACA788000CDBD5 /* Add.storyboard */,
+				DB27239821ACA787000CDBD5 /* Discover.storyboard */,
+				DB27239921ACA787000CDBD5 /* Profile.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DB2723AF21ACA9CA000CDBD5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB2723A721ACA859000CDBD5 /* SignInViewController.swift */,
+				DB2723A321ACA858000CDBD5 /* SignUpViewController.swift */,
+				DB2723A621ACA859000CDBD5 /* HomeViewController.swift */,
+				DB2723A221ACA858000CDBD5 /* DiscoverViewController.swift */,
+				DB2723A521ACA859000CDBD5 /* AddViewController.swift */,
+				DB2723A421ACA859000CDBD5 /* ProfileViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DB2723B721ACB562000CDBD5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB2723B521ACB559000CDBD5 /* AuthService.swift */,
+				DBAA071D21B1497500F8998F /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB27239321ACA73E000CDBD5 /* Build configuration list for PBXNativeTarget "VintageBooks" */;
 			buildPhases = (
+				8C0039B665F3F280C981A5C1 /* [CP] Check Pods Manifest.lock */,
 				DB27237D21ACA73D000CDBD5 /* Sources */,
 				DB27237E21ACA73D000CDBD5 /* Frameworks */,
 				DB27237F21ACA73D000CDBD5 /* Resources */,
+				69E64AE800BA0083B7BF0864 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,35 +211,93 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB27239F21ACA788000CDBD5 /* Main.storyboard in Resources */,
+				DB27239E21ACA788000CDBD5 /* Profile.storyboard in Resources */,
+				DB2723B121ACAA6D000CDBD5 /* GoogleService-Info.plist in Resources */,
 				DB27238F21ACA73E000CDBD5 /* LaunchScreen.storyboard in Resources */,
+				DB27239721ACA77B000CDBD5 /* Start.storyboard in Resources */,
+				DB2723A121ACA788000CDBD5 /* Add.storyboard in Resources */,
+				DB27239D21ACA788000CDBD5 /* Discover.storyboard in Resources */,
 				DB27238C21ACA73E000CDBD5 /* Assets.xcassets in Resources */,
-				DB27238A21ACA73D000CDBD5 /* Main.storyboard in Resources */,
+				DB2723A021ACA788000CDBD5 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69E64AE800BA0083B7BF0864 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VintageBooks/Pods-VintageBooks-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VintageBooks/Pods-VintageBooks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C0039B665F3F280C981A5C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VintageBooks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB27237D21ACA73D000CDBD5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB27238721ACA73D000CDBD5 /* ViewController.swift in Sources */,
+				DB2723A821ACA859000CDBD5 /* DiscoverViewController.swift in Sources */,
+				DB2723AB21ACA859000CDBD5 /* AddViewController.swift in Sources */,
+				DB2723AA21ACA859000CDBD5 /* ProfileViewController.swift in Sources */,
+				DB2723AD21ACA859000CDBD5 /* SignInViewController.swift in Sources */,
+				DB2723A921ACA859000CDBD5 /* SignUpViewController.swift in Sources */,
+				DB2723AC21ACA859000CDBD5 /* HomeViewController.swift in Sources */,
 				DB27238521ACA73D000CDBD5 /* AppDelegate.swift in Sources */,
+				DB2723B621ACB559000CDBD5 /* AuthService.swift in Sources */,
+				DBAA071E21B1497500F8998F /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DB27238821ACA73D000CDBD5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB27238921ACA73D000CDBD5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DB27238D21ACA73E000CDBD5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,6 +427,7 @@
 		};
 		DB27239421ACA73E000CDBD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF72999D294B40820A992446 /* Pods-VintageBooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,12 +440,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bilal.fakhto.VintageBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DB27239521ACA73E000CDBD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A645E0D58AD6936FE07326BE /* Pods-VintageBooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,7 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bilal.fakhto.VintageBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
