@@ -10,11 +10,11 @@ import Foundation
 class Post {
     var caption: String
     var photoUrl: String
-    var bookTitel: String
+//    var bookTitel: String
     
-    init(captionText: String, photoUrlString: String, bookTitelString: String) {
+    init(captionText: String, photoUrlString: String) {
         caption = captionText
         photoUrl = photoUrlString
-        bookTitel = bookTitelString
+ //       bookTitel = bookTitelString
     }
 }

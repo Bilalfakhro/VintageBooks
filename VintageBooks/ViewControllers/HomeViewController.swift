@@ -9,33 +9,44 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
- 
+    
+    var ref: DatabaseReference?
+    let userID = Auth.auth().currentUser?.uid
     var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
         tableView.dataSource = self
+        tableView.delegate = self
         loadPosts()
+
+//        var post = Post(captionText: "test", photoUrlString: "url1", bookTitelString: "booktest")
+//        print(post.bookTitel)
+//        print(post.caption)
+//        print(post.photoUrl)
+        
     }
-    
+
     func loadPosts() {
-        Database.database().reference().child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
+        let ref = Database.database().reference()
+        let postsReference = ref.child("Users").child(userID!).child("Posts")
+        postsReference.observe(.childAdded)
+        { (snapshot: DataSnapshot) in
+            print(snapshot)
             print(Thread.isMainThread)
-            if let dict = snapshot.value as? [String: Any] {
+            if let dict = snapshot.value as? [String: AnyObject] {
                 let captionText = dict["Book_Text"] as! String
                 let photoUrlString = dict["Book_Photo_Url"] as! String
-                let bookTitel = dict["Book_Titel"] as! String
-                let post = Post(captionText: captionText, photoUrlString: photoUrlString, bookTitelString: bookTitel)
+  //              let bookTitelString = dict["Book_Titel"] as! String
+                let post = Post(captionText: captionText, photoUrlString: photoUrlString)
+                
                 self.posts.append(post)
                 print(self.posts)
+                
                 self.tableView.reloadData()
             }
         }
@@ -61,4 +72,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         self.present(signInVC, animated: false, completion: nil)
     }
 }
+
+
+
 

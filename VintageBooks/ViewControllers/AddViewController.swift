@@ -97,7 +97,7 @@ class AddViewController: UIViewController {
         let postsReference = ref.child("Users").child(userID!).child("Posts")
         let newPostId = postsReference.childByAutoId().key
         let newPostReference = postsReference.child(newPostId!)
-        newPostReference.setValue(["Photo_Url": photoUrl], withCompletionBlock: {
+        newPostReference.setValue(["Book_Photo_Url": photoUrl, "Book_Title": bookTitleTextfield.text!, "Book_Text": captionTextfield.text!], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 print(error!.localizedDescription)
