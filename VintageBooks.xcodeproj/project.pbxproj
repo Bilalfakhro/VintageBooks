@@ -25,6 +25,7 @@
 		DB2723B121ACAA6D000CDBD5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB2723B021ACAA6C000CDBD5 /* GoogleService-Info.plist */; };
 		DB2723B621ACB559000CDBD5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723B521ACB559000CDBD5 /* AuthService.swift */; };
 		DBAA071E21B1497500F8998F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA071D21B1497500F8998F /* Post.swift */; };
+		DBAA072021B3441500F8998F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA071F21B3441500F8998F /* Config.swift */; };
 		F27DF32A6161193471BBEB5E /* Pods_VintageBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01B477A7F9013F78A7E560 /* Pods_VintageBooks.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		DB2723B021ACAA6C000CDBD5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB2723B521ACB559000CDBD5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DBAA071D21B1497500F8998F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DBAA071F21B3441500F8998F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				DB2723B521ACB559000CDBD5 /* AuthService.swift */,
 				DBAA071D21B1497500F8998F /* Post.swift */,
+				DBAA071F21B3441500F8998F /* Config.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				DB2723A921ACA859000CDBD5 /* SignUpViewController.swift in Sources */,
 				DB2723AC21ACA859000CDBD5 /* HomeViewController.swift in Sources */,
 				DB27238521ACA73D000CDBD5 /* AppDelegate.swift in Sources */,
+				DBAA072021B3441500F8998F /* Config.swift in Sources */,
 				DB2723B621ACB559000CDBD5 /* AuthService.swift in Sources */,
 				DBAA071E21B1497500F8998F /* Post.swift in Sources */,
 			);

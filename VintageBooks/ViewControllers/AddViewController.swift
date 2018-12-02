@@ -13,24 +13,21 @@ class AddViewController: UIViewController {
     
     @IBOutlet weak var removeButton: UIBarButtonItem!
     
-    @IBOutlet weak var bookTitle: UITextField!
-    @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var captionTextView: UITextView!
+    @IBOutlet weak var bookTitleTextfield: UITextField!
+    @IBOutlet weak var bookPhotoImageView: UIImageView!
+    @IBOutlet weak var captionTextfield: UITextView!
     @IBOutlet weak var shareButton: UIButton!
     
     var selectedPhoto: UIImage?
     var ref: DatabaseReference?
     let userID = Auth.auth().currentUser?.uid
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = Database.database().reference()
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPhoto))
-        photo.addGestureRecognizer(tapGesture)
-        photo.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddViewController.handleSelectPhoto))
+        bookPhotoImageView.addGestureRecognizer(tapGesture)
+        bookPhotoImageView.isUserInteractionEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,46 +39,51 @@ class AddViewController: UIViewController {
         if selectedPhoto != nil {
             self.shareButton.isEnabled = true
             self.removeButton.isEnabled = true
-            self.shareButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+            self.shareButton.backgroundColor = .black
         } else {
             self.shareButton.isEnabled = false
             self.removeButton.isEnabled = false
             self.shareButton.backgroundColor = .lightGray
         }
     }
-
+    
+    // KEYBOARD DISMISS ONCLICK ANYWHERE
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
     @objc func handleSelectPhoto() {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        present(pickerController, animated: true, completion: nil)
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        present(picker, animated: false, completion: nil)
     }
     
     @IBAction func shareButton_TouchUpInside(_ sender: Any) {
-        view.endEditing(true)
-        // FIREBASE DATABASE
-        let imageName = NSUUID().uuidString
-        let storageRef = Storage.storage().reference().child("Book_Photo").child(userID!).child("\(imageName).jpeg")
+      //  view.endEditing(true)
         if let uploadData = selectedPhoto?.jpegData(compressionQuality: 0.1) {
-            storageRef.putData(uploadData, metadata: nil, completion: { (_, err) in
-                if let error = err {
-                    print(error)
+            let imageName = NSUUID().uuidString
+            let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Book_Photo").child(userID!).child(imageName)
+            storageRef.putData(uploadData, metadata: nil, completion: { (_, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
                     return
                 }
-                storageRef.downloadURL(completion: { (url, err) in
-                    if let err = err {
-                        print(err)
+                storageRef.downloadURL(completion: { (url, error) in
+                    if let error = error {
+                        print(error)
                         return
                     }
-                    guard let url = url else { return }
-                    self.bookTitle.text = "" as String
-                    self.ref?.child("Users").child(self.userID!).child("Posts").childByAutoId().child("Book_Title").setValue(self.bookTitle.text)
+                guard let url = url else { return }
+                let photoUrl = url.absoluteString
+                    self.sendDataToDatabase(photoUrl: photoUrl)
                 })
             })
-            self.clean()
+            } else {
+            print("Profile Image can't be empty")
+            clean()
         }
     }
 
@@ -90,27 +92,28 @@ class AddViewController: UIViewController {
         handlePost()
     }
     
-//    func sendDataToDatabase(photoUrl: String, caption: String, bookTitel: String) {
-//        let ref = Database.database().reference()
-//        let postsReference = ref.child("Users").child(userID!).child("Posts")
-//        let newPostId = postsReference.childByAutoId().key
-//        let newPostReference = postsReference.child(newPostId!)
-//        newPostReference.setValue(["Book_Photo_Url": photoUrl, "Book_Text": captionTextView.text!, "Book_Titel": bookTextfield.text!], withCompletionBlock: {
-//            (error, ref) in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//                return
-//            }
-//            print("Success")
-//            self.clean()
-//            self.tabBarController?.selectedIndex = 0
-//        })
-//    }
-
+    func sendDataToDatabase(photoUrl: String) {
+        let ref = Database.database().reference()
+        let postsReference = ref.child("Users").child(userID!).child("Posts")
+        let newPostId = postsReference.childByAutoId().key
+        let newPostReference = postsReference.child(newPostId!)
+        newPostReference.setValue(["Photo_Url": photoUrl], withCompletionBlock: {
+            (error, ref) in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            print("Success")
+            self.clean()
+            self.tabBarController?.selectedIndex = 0
+        })
+    }
+    
+    // EMPTY FIELDS AFTER PUSHING THE "SHARE" BUTTON
     func clean() {
-        self.captionTextView.text = ""
-        self.photo.image = UIImage(named: "placeholder-photo")
-        self.bookTitle.text = ""
+        self.captionTextfield.text = ""
+        self.bookPhotoImageView.image = UIImage(named: "placeholder-photo")
+        self.bookTitleTextfield.text = ""
     }
 }
 
@@ -122,7 +125,7 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
 
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage{
             selectedPhoto = image
-            photo.image = image
+            bookPhotoImageView.image = image
         }
         dismiss(animated: true, completion: nil)
     }
