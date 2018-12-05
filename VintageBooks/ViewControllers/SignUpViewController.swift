@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var signUpButton: UIButton!
     
     var selectedImageFromPicker: UIImage?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,11 +50,11 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
-        // PROFILE IMAGE RADIUS CORNER
-        profileImage.layer.cornerRadius = 40
-        profileImage.clipsToBounds = true
+//        // PROFILE IMAGE RADIUS CORNER
+//        profileImage.layer.cornerRadius = 40
+//        profileImage.clipsToBounds = true
         
-        // CLICK PROFILE IMAGE FOR CHANGE PICTURE
+         //CLICK PROFILE IMAGE FOR CHANGE PICTURE
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGesture)
         profileImage.isUserInteractionEnabled = true
@@ -147,20 +147,20 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.dismiss(animated: false, completion: nil)
         })
     }
-    
+
     @objc func handleSelectProfileImageView() {
         let picker = UIImagePickerController()
-        
+
         picker.delegate = self
         picker.allowsEditing = true
-        
+
         present(picker, animated: false, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // Local variable inserted by Swift 4.2 migrator.
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-        
+
         if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
             selectedImageFromPicker = editedImage
         } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {

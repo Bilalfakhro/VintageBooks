@@ -62,7 +62,7 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func shareButton_TouchUpInside(_ sender: Any) {
-      //  view.endEditing(true)
+        view.endEditing(true)
         if let uploadData = selectedPhoto?.jpegData(compressionQuality: 0.1) {
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Book_Photo").child(userID!).child(imageName)
@@ -79,6 +79,7 @@ class AddViewController: UIViewController {
                 guard let url = url else { return }
                 let photoUrl = url.absoluteString
                     self.sendDataToDatabase(photoUrl: photoUrl)
+                    self.sendDataToUserIDDatabase(photoUrl: photoUrl)
                 })
             })
             } else {
@@ -93,6 +94,23 @@ class AddViewController: UIViewController {
     }
     
     func sendDataToDatabase(photoUrl: String) {
+        let ref = Database.database().reference()
+        let postsReference = ref.child("Posts")
+        let newPostId = postsReference.childByAutoId().key
+        let newPostReference = postsReference.child(newPostId!)
+        newPostReference.setValue(["Book_Photo_Url": photoUrl, "Book_Title": bookTitleTextfield.text!, "Book_Text": captionTextfield.text!], withCompletionBlock: {
+            (error, ref) in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            print("Success")
+            self.clean()
+            self.tabBarController?.selectedIndex = 0
+        })
+    }
+    
+    func sendDataToUserIDDatabase(photoUrl: String) {
         let ref = Database.database().reference()
         let postsReference = ref.child("Users").child(userID!).child("Posts")
         let newPostId = postsReference.childByAutoId().key
@@ -111,7 +129,7 @@ class AddViewController: UIViewController {
     
     // EMPTY FIELDS AFTER PUSHING THE "SHARE" BUTTON
     func clean() {
-        self.captionTextfield.text = ""
+        self.captionTextfield.text = "Wright book text here..."
         self.bookPhotoImageView.image = UIImage(named: "placeholder-photo")
         self.bookTitleTextfield.text = ""
     }
