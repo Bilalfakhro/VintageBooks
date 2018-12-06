@@ -11,11 +11,11 @@ import UIKit
 class User: NSObject {
     var name: String?
     var email: String?
-    var profileImageUrl: UIImage?
+    var profileImageUrl: String?
     
     init(dictionary: [String: Any]) {
         self.name = dictionary["Name"] as? String
         self.email = dictionary["Email"] as? String
-        self.profileImageUrl = dictionary["Profile_Image_Url"] as? UIImage
+        self.profileImageUrl = dictionary["Profile_Image_Url"] as? String
     }
 }

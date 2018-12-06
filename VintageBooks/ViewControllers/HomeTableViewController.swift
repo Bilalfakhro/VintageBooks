@@ -58,14 +58,17 @@ class HomeTableViewController: UITableViewController {
         cell.textLabel?.text = posts[indexPath.row].bookTitle
         cell.detailTextLabel?.text = posts[indexPath.row].caption
 
-        // CREATE A STORAGE REFERENCE FROM FIREBASE STORAGE SERVICE
-        let storage = Storage.storage()
-        let imageRef = storage.reference(forURL: posten.photoUrl)
-        
-        // DOWNLOAD IN MEMORY WITH A MAXIMUM ALLOWED SIZE OF 1MB (1 * 1024 * 1024 BYTES)
-        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            cell.bookImageView.loadImageUsingCacheWithUrlString(posten.photoUrl)
-        }
+//        // CREATE A STORAGE REFERENCE FROM FIREBASE STORAGE SERVICE
+//        let storage = Storage.storage()
+//        let imageRef = storage.reference(forURL: posten.photoUrl)
+//        
+//        // DOWNLOAD IN MEMORY WITH A MAXIMUM ALLOWED SIZE OF 1MB (1 * 1024 * 1024 BYTES)
+//        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            let photoUrl = posten.photoUrl
+            if photoUrl != nil {
+                cell.bookImageView.loadImageUsingCacheWithUrlString(photoUrl)
+            }
+//        }
         return cell
     }
     
