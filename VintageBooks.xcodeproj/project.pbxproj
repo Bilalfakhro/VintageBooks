@@ -21,6 +21,7 @@
 		DB2723B121ACAA6D000CDBD5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB2723B021ACAA6C000CDBD5 /* GoogleService-Info.plist */; };
 		DB2723B621ACB559000CDBD5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723B521ACB559000CDBD5 /* AuthService.swift */; };
 		DB769A9821B829FB00690DBA /* Extenssions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB769A9721B829FB00690DBA /* Extenssions.swift */; };
+		DB769A9A21B8474700690DBA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB769A9921B8474700690DBA /* User.swift */; };
 		DB78453421B53BDA00D5A26A /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB78453321B53BDA00D5A26A /* HomeTableViewController.swift */; };
 		DB78453721B544C300D5A26A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB78453921B544C300D5A26A /* Home.storyboard */; };
 		DBAA071E21B1497500F8998F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA071D21B1497500F8998F /* Post.swift */; };
@@ -48,6 +49,7 @@
 		DB2723B021ACAA6C000CDBD5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB2723B521ACB559000CDBD5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DB769A9721B829FB00690DBA /* Extenssions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenssions.swift; sourceTree = "<group>"; };
+		DB769A9921B8474700690DBA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DB78453321B53BDA00D5A26A /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		DB78453821B544C300D5A26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		DBAA071D21B1497500F8998F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				DB2723B521ACB559000CDBD5 /* AuthService.swift */,
 				DBAA071D21B1497500F8998F /* Post.swift */,
 				DBAA071F21B3441500F8998F /* Config.swift */,
+				DB769A9921B8474700690DBA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				DBAA072021B3441500F8998F /* Config.swift in Sources */,
 				DB2723B621ACB559000CDBD5 /* AuthService.swift in Sources */,
 				DBAA071E21B1497500F8998F /* Post.swift in Sources */,
+				DB769A9A21B8474700690DBA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

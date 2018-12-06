@@ -50,10 +50,6 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         passwordTextField.layer.addSublayer(bottomLayerPassword)
         
-//        // PROFILE IMAGE RADIUS CORNER
-//        profileImage.layer.cornerRadius = 40
-//        profileImage.clipsToBounds = true
-        
          //CLICK PROFILE IMAGE FOR CHANGE PICTURE
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
         profileImage.addGestureRecognizer(tapGesture)
@@ -107,13 +103,13 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                 return
             }
             // FIREBASE DATABASE
-            guard let uid = user?.user.uid
+            guard let userID = user?.user.uid
             else {
                 return
             }
             //successfully authenticated user
             let imageName = NSUUID().uuidString
-            let storageRef = Storage.storage().reference().child("profile_images").child(uid).child("\(imageName).jpeg")
+            let storageRef = Storage.storage().reference().child("profile_images").child(userID).child("\(imageName).jpeg")
             if let uploadData = self.profileImage.image?.jpegData(compressionQuality: 0.1) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (_, err) in
                     if let error = error {
@@ -128,7 +124,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                         guard let url = url else { return }
                         let values = ["Name": name, "Email": email, "Profile_Image_Url": url.absoluteString]
                         
-                        self.registerUserIntoDatabaseWithUID(uid, values: values as [String : AnyObject])
+                        self.registerUserIntoDatabaseWithUID(userID, values: values as [String : AnyObject])
                     })
                 })
             }
@@ -144,7 +140,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print(err)
                 return
             }
-            self.dismiss(animated: false, completion: nil)
+            self.dismiss(animated: true
+                , completion: nil)
         })
     }
 
@@ -154,7 +151,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.delegate = self
         picker.allowsEditing = true
 
-        present(picker, animated: false, completion: nil)
+        present(picker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -169,16 +166,16 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         if let selectedImage = selectedImageFromPicker {
             profileImage.image = selectedImage
         }
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         print("canceled picker")
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func dismiss_onClick(_ sender: Any) {
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 

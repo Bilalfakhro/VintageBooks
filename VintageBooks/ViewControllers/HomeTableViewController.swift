@@ -11,7 +11,7 @@ import Firebase
 
 class HomeTableViewController: UITableViewController {
 
-    let cellId = "cellId"
+    let homeCellID = "homeCellID"
     var posts = [Post]()
     
     var ref: DatabaseReference?
@@ -21,15 +21,15 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // REGISTER THE CLASS FOR THE CELL
-        tableView.register(postCell.self, forCellReuseIdentifier: cellId)
-        loadPost()
+        tableView.register(postCell.self, forCellReuseIdentifier: homeCellID)
+        fetchPost()
     }
     
     // DOWNLOAD THE DATA FROM FIREBASE DATABASE
-    func loadPost() {
-        Database.database().reference().child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
+    func fetchPost() {
+        let ref = Database.database().reference()
+        ref.child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
             print(Thread.isMainThread)
-           // print(snapshot.value!)
             if let dictionary = snapshot.value as? [String: Any] {
                 let captionText = dictionary["Book_Text"] as! String
                 let bookTitleString = dictionary["Book_Title"] as! String
@@ -50,7 +50,7 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! postCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: homeCellID, for: indexPath) as! postCell
         
 //        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
         let posten = posts[indexPath.row]
@@ -64,15 +64,7 @@ class HomeTableViewController: UITableViewController {
         
         // DOWNLOAD IN MEMORY WITH A MAXIMUM ALLOWED SIZE OF 1MB (1 * 1024 * 1024 BYTES)
         imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                print(error)
-                return
-            } else {
-                DispatchQueue.main.async(execute: {
-                cell.bookImageView.image = UIImage(data: data!)
-                    print(data!)
-                })
-            }
+            cell.bookImageView.loadImageUsingCacheWithUrlString(posten.photoUrl)
         }
         return cell
     }

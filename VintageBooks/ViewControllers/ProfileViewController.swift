@@ -10,15 +10,12 @@ import UIKit
 import Firebase
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var NameTextfield: UITextField!
-    @IBOutlet weak var emailTextfield: UITextField!
     
     @IBOutlet weak var myTableView: UITableView!
     
-    let cellId = "cellId"
+    let profileCellID = "profileCellID"
     var posts = [Post]()
+    var users = [User]()
     
     var ref: DatabaseReference?
     let userID = Auth.auth().currentUser?.uid
@@ -26,23 +23,21 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.myTableView.delegate = self as UITableViewDelegate
-        self.myTableView.dataSource = self as UITableViewDataSource
-        
         // REGISTER THE CLASS FOR THE CELL
-        myTableView.register(myPostCell.self, forCellReuseIdentifier: cellId)
-        loadPost()
+        myTableView.register(myPostCell.self, forCellReuseIdentifier: profileCellID)
+        
+        fetchMyPost()
     }
     
     // DOWNLOAD THE DATA FROM FIREBASE DATABASE
-    func loadPost() {
-    Database.database().reference().child("Users").child(userID!).child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
+    func fetchMyPost() {
+    Database.database().reference().child("Users").child(Auth.auth().currentUser!.uid).child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
             print(Thread.isMainThread)
-            // print(snapshot.value!)
-            if let dictionary = snapshot.value as? [String: Any] {
-                let captionText = dictionary["Book_Text"] as! String
-                let bookTitleString = dictionary["Book_Title"] as! String
-                let photoUrlString = dictionary["Book_Photo_Url"] as! String
+            if let dict = snapshot.value as? [String: Any] {
+                let captionText = dict["Book_Text"] as! String
+                let bookTitleString = dict["Book_Title"] as! String
+                
+                let photoUrlString = dict["Book_Photo_Url"] as! String
                 let post = Post(captionText: captionText, photoUrlString: photoUrlString, bookTitleString: bookTitleString)
                 self.posts.append(post)
                 DispatchQueue.main.async(execute: {
@@ -58,7 +53,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! myPostCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: profileCellID, for: indexPath) as! myPostCell
         
         let posten = posts[indexPath.row]
         cell.textLabel?.text = posts[indexPath.row].bookTitle
@@ -70,15 +65,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // DOWNLOAD IN MEMORY WITH A MAXIMUM ALLOWED SIZE OF 1MB (1 * 1024 * 1024 BYTES)
         imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                print(error)
-                return
-            } else {
-                DispatchQueue.main.async(execute: {
-                    cell.bookImageView.image = UIImage(data: data!)
-                    print(data!)
-                })
-            }
+
+            cell.bookImageView.loadImageUsingCacheWithUrlString(posten.photoUrl)
         }
         return cell
     }

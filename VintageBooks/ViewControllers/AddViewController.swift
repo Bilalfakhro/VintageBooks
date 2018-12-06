@@ -104,7 +104,6 @@ class AddViewController: UIViewController {
                 print(error!.localizedDescription)
                 return
             }
-            print("Success")
             self.clean()
             self.tabBarController?.selectedIndex = 0
         })
@@ -121,7 +120,6 @@ class AddViewController: UIViewController {
                 print(error!.localizedDescription)
                 return
             }
-            print("Success")
             self.clean()
             self.tabBarController?.selectedIndex = 0
         })
