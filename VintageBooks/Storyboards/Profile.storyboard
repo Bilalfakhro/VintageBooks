@@ -65,7 +65,13 @@
                         <viewLayoutGuide key="safeArea" id="hEE-qV-qDg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="XTh-ZM-1b8">
-                        <barButtonItem key="rightBarButtonItem" title="ℹ️" id="GDk-by-aAl"/>
+                        <barButtonItem key="rightBarButtonItem" title="info" image="info_filled" id="LAA-AI-8m7">
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
+                            <connections>
+                                <action selector="infoButton:" destination="Zz7-f5-tlS" id="NEt-DR-j2s"/>
+                                <segue destination="VZT-cD-LSn" kind="presentation" identifier="profileToInfoSegue" animates="NO" id="mT5-9b-Ppr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="5HI-Sx-3fx" id="XLR-Hr-kBK"/>
@@ -74,6 +80,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q2i-dJ-1Ub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4527.536231884058" y="-815.625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4dY-sm-UmE">
+            <objects>
+                <viewController id="VZT-cD-LSn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lro-AB-2Rn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6kX-3H-zFg">
+                                <rect key="frame" x="20" y="126" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6eR-nN-Trb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDT-Wi-X6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5372" y="-816"/>
         </scene>
         <!--Profile-->
         <scene sceneID="sLE-xY-QHW">
@@ -99,5 +130,6 @@
     <resources>
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
+        <image name="info_filled" width="100" height="100"/>
     </resources>
 </document>

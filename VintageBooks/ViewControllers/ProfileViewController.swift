@@ -77,6 +77,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 72
     }
+    
+    @IBAction func infoButton(_ sender: Any) {
+        performSegue(withIdentifier: "profileToInfoSegue", sender: self)
+    }
 }
 
 // CLASS FOR THE CELL FOR THE POSTLABELS
