@@ -33,15 +33,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func fetchMyPost() {
     Database.database().reference().child("Users").child(Auth.auth().currentUser!.uid).child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
             print(Thread.isMainThread)
-            if let dict = snapshot.value as? [String: Any] {
-                let captionText = dict["Book_Text"] as! String
-                let bookTitleString = dict["Book_Title"] as! String
-                
-                let photoUrlString = dict["Book_Photo_Url"] as! String
-                let post = Post(captionText: captionText, photoUrlString: photoUrlString, bookTitleString: bookTitleString)
-                self.posts.append(post)
-                DispatchQueue.main.async(execute: {
-                    self.myTableView.reloadData()
+        if let Dictionary = snapshot.value as? [String: Any] {
+            let bookTextString = Dictionary["Book_Text"] as! String
+            let bookTitleString = Dictionary["Book_Title"] as! String
+            let bookPhotoUrl = Dictionary["Book_Photo_Url"] as! String
+            let post = Post(Dictionary: Dictionary)
+            self.posts.append(post)
+            
+            DispatchQueue.main.async(execute: {
+                self.myTableView.reloadData()
                 })
             }
         }
@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let posten = posts[indexPath.row]
         cell.textLabel?.text = posts[indexPath.row].bookTitle
-        cell.detailTextLabel?.text = posts[indexPath.row].caption
+        cell.detailTextLabel?.text = posts[indexPath.row].bookText
 //
 //        // CREATE A STORAGE REFERENCE FROM FIREBASE STORAGE SERVICE
 //        let storage = Storage.storage()
@@ -65,10 +65,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
 //        // DOWNLOAD IN MEMORY WITH A MAXIMUM ALLOWED SIZE OF 1MB (1 * 1024 * 1024 BYTES)
 //        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            let photoUrl = posten.photoUrl
-            if photoUrl != nil {
-            cell.bookImageView.loadImageUsingCacheWithUrlString(photoUrl)
-            } 
+        let bookPhotoUrl = posten.bookPhotoUrl
+        if let bookPhotoUrl = posten.bookPhotoUrl {
+            cell.bookImageView.loadImageUsingCacheWithUrlString(bookPhotoUrl)
+        }
 //        }
         return cell
     }

@@ -30,12 +30,13 @@ class HomeTableViewController: UITableViewController {
         let ref = Database.database().reference()
         ref.child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
             print(Thread.isMainThread)
-            if let dictionary = snapshot.value as? [String: Any] {
-                let captionText = dictionary["Book_Text"] as! String
-                let bookTitleString = dictionary["Book_Title"] as! String
-                let photoUrlString = dictionary["Book_Photo_Url"] as! String
-                let post = Post(captionText: captionText, photoUrlString: photoUrlString, bookTitleString: bookTitleString)
+            if let Dictionary = snapshot.value as? [String: Any] {
+                let bookTextString = Dictionary["Book_Text"] as! String
+                let bookTitleString = Dictionary["Book_Title"] as! String
+                let bookPhotoUrl = Dictionary["Book_Photo_Url"] as! String
+                let post = Post(Dictionary: Dictionary)
                 self.posts.append(post)
+                
                 DispatchQueue.main.async(execute: {
                     self.tableView.reloadData()
                 })
@@ -54,12 +55,10 @@ class HomeTableViewController: UITableViewController {
         let posten = posts[indexPath.row]
 
         cell.textLabel?.text = posts[indexPath.row].bookTitle
-        cell.detailTextLabel?.text = posts[indexPath.row].caption
+        cell.detailTextLabel?.text = posts[indexPath.row].bookText
 
-//            let photoUrl = posten.photoUrl
-        if case let photoUrl = posten.photoUrl {
-        cell.bookImageView.loadImageUsingCacheWithUrlString(photoUrl)
-                print(photoUrl)
+        if let bookPhotoUrl = posten.bookPhotoUrl {
+            cell.bookImageView.loadImageUsingCacheWithUrlString(bookPhotoUrl)
             }
         return cell
     }
@@ -72,13 +71,19 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let booksDetailView = storyboard?.instantiateViewController(withIdentifier: "BooksDetailViewController") as? BooksDetailViewController
-        booksDetailView?.bookTitleString = posts[indexPath.row].bookTitle
-        booksDetailView?.captionText = posts[indexPath.row].caption
- 
+        
+        let postens = posts[indexPath.row]
+        booksDetailView?.bookTitleString = posts[indexPath.row].bookTitle!
+        booksDetailView?.bookText = posts[indexPath.row].bookText!
+//        booksDetailView?.bookImage = posts[indexPath.row].bookPhotoUrl
+        
         let bookImageView = UIImageView()
-        if let photoUrl = posts.photoUrl {
-            bookImageView.loadImageUsingCacheWithUrlString(photoUrl)
+        if let booksPhotoUrl = postens.bookPhotoUrl {
+           bookImageView.loadImageUsingCacheWithUrlString(booksPhotoUrl)
         }
+        booksDetailView?.bookImage = bookImageView.image!
+        
+        
   
         self.navigationController?.pushViewController(booksDetailView!, animated: true)
     }

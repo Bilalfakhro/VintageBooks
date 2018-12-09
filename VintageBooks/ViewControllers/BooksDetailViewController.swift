@@ -18,14 +18,14 @@ class BooksDetailViewController: UIViewController {
     var posts = [Post]()
     
     var bookTitleString = ""
-    var captionText = ""
+    var bookText = ""
     var bookImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         booksTitleLabel.text = bookTitleString
-        booksTextfield.text = captionText
+        booksTextfield.text = bookText
         bookImageView.image = bookImage
     
     
