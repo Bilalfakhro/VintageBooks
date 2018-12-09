@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Privacy-->
+        <scene sceneID="M3G-8v-NjI">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" id="N1E-93-jWa" customClass="InfoViewController" customModule="VintageBooks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TDT-3l-dre">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfO-Gs-Ktq">
+                                <rect key="frame" x="20" y="128" width="374" height="685"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">VINTAGEBOOKS APP PRIVACY POLICY
+
+VINTAGEBOOKS app respects the privacy of our users. 
+This Privacy Policy explains how we collect, use, 
+disclose, and safeguard your information when you 
+visit our mobile application. Please read this Privacy Policy carefully. 
+IF YOU 00 NOT AGREE WITH THE TERMS OF THIS PRIVACY POLICY, PLEASE DO NOT ACCESS THE APPLICATION. 
+We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert 
+you about any changes by updating the "Last updated" date of this Privacy Policy. You are encouraged to 
+periodically review this Privacy Policy to stay informed of updates. You will be deemed to have been made 
+aware of, will be subject to, and will be deemed to have accepted the changes in any revised Privacy Policy by your continued use of the Application after the date such revised Privacy Policy is posted. 
+
+This Privacy Policy does not apply to the third-party online/mobile store from which you install the 
+Application or make payments, including any in-game virtual items, which may also collect and use data about you. We are not responsible for any of the data 
+collected by any such third party. 
+
+Copyright © 2018 VintageBooks, Inc. All rights reserved. 
+No users of VintageBooks may reproduce any copyrighted work in print, video or digital form in violation of the law. Copyrighted works include but are not limited to: 
+algorithms replicating VintageBooks technology, logos, names, taglines, visual wireframes, videos, social media, websites, blogs, images, and training materials. This implies that no one is allowed, by any means, to copy any information or technology property from the app, as well as any ancillary content that relates to VintageBooks at large.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LfO-Gs-Ktq" firstAttribute="leading" secondItem="Mwe-Su-l6s" secondAttribute="leading" constant="20" id="17E-ps-8an"/>
+                            <constraint firstItem="Mwe-Su-l6s" firstAttribute="bottom" secondItem="LfO-Gs-Ktq" secondAttribute="bottom" id="3k8-sZ-C1g"/>
+                            <constraint firstItem="Mwe-Su-l6s" firstAttribute="trailing" secondItem="LfO-Gs-Ktq" secondAttribute="trailing" constant="20" id="dRq-WA-3qO"/>
+                            <constraint firstItem="LfO-Gs-Ktq" firstAttribute="top" secondItem="Mwe-Su-l6s" secondAttribute="top" constant="40" id="to8-hk-3Sa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mwe-Su-l6s"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Privacy" id="ciW-0C-pya"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h2a-Zh-j8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3621.739130434783" y="-1880.3571428571427"/>
+        </scene>
+        <!--Privacy-->
+        <scene sceneID="rjN-74-ysL">
+            <objects>
+                <navigationController storyboardIdentifier="PrivacyNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="aXv-PW-4MI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Privacy" image="info_filled" id="IwK-Nc-pWn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gk1-ss-T78">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="N1E-93-jWa" kind="relationship" relationship="rootViewController" id="ehS-6Z-OUy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YkC-yq-qVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2834.7826086956525" y="-1880.3571428571427"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info_filled" width="30" height="30"/>
+    </resources>
+</document>

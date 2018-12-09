@@ -51,30 +51,36 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: homeCellID, for: indexPath) as! postCell
-        
-//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
         let posten = posts[indexPath.row]
-        
+
         cell.textLabel?.text = posts[indexPath.row].bookTitle
         cell.detailTextLabel?.text = posts[indexPath.row].caption
 
-//        // CREATE A STORAGE REFERENCE FROM FIREBASE STORAGE SERVICE
-//        let storage = Storage.storage()
-//        let imageRef = storage.reference(forURL: posten.photoUrl)
-//        
-//        // DOWNLOAD IN MEMORY WITH A MAXIMUM ALLOWED SIZE OF 1MB (1 * 1024 * 1024 BYTES)
-//        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            let photoUrl = posten.photoUrl
-            if photoUrl != nil {
-                cell.bookImageView.loadImageUsingCacheWithUrlString(photoUrl)
+//            let photoUrl = posten.photoUrl
+        if case let photoUrl = posten.photoUrl {
+        cell.bookImageView.loadImageUsingCacheWithUrlString(photoUrl)
+                print(photoUrl)
             }
-//        }
         return cell
     }
     
     // CELL ROW HEIGHT
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let booksDetailView = storyboard?.instantiateViewController(withIdentifier: "BooksDetailViewController") as? BooksDetailViewController
+        booksDetailView?.bookTitleString = posts[indexPath.row].bookTitle
+        booksDetailView?.captionText = posts[indexPath.row].caption
+ 
+        let bookImageView = UIImageView()
+        if let photoUrl = posts.photoUrl {
+            bookImageView.loadImageUsingCacheWithUrlString(photoUrl)
+        }
+  
+        self.navigationController?.pushViewController(booksDetailView!, animated: true)
     }
     
     @IBAction func logOutButtonTapped(_ sender: Any) {
@@ -126,3 +132,4 @@ class postCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

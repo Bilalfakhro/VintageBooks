@@ -133,12 +133,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqL-nC-IUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3624.8000000000002" y="-815.44227886056979"/>
+            <point key="canvasLocation" x="4417" y="-1579"/>
         </scene>
         <!--Add-->
         <scene sceneID="xVG-Le-qBJ">
             <objects>
-                <navigationController storyboardIdentifier="NavigationAddController" automaticallyAdjustsScrollViewInsets="NO" id="H00-oV-EaB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="H00-oV-EaB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Add" image="Add" selectedImage="Add_selected" id="y0w-bZ-aec"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

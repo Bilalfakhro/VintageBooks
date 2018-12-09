@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -22,16 +22,17 @@
                         <segue destination="lnJ-Uj-CLK" kind="relationship" relationship="viewControllers" id="nWb-Aj-c4f"/>
                         <segue destination="QnM-xn-NO0" kind="relationship" relationship="viewControllers" id="d2d-7q-MJ6"/>
                         <segue destination="hmN-Bx-msA" kind="relationship" relationship="viewControllers" id="Hdh-bO-OPu"/>
+                        <segue destination="FNp-h5-t6Y" kind="relationship" relationship="viewControllers" id="3iU-RG-Pux"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ja1-X1-HEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1929" y="-2389"/>
         </scene>
-        <!--NavigationAddController-->
+        <!--AddNavigationController-->
         <scene sceneID="wkb-2j-tbw">
             <objects>
-                <viewControllerPlaceholder storyboardName="Add" referencedIdentifier="NavigationAddController" id="QnM-xn-NO0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Add" referencedIdentifier="AddNavigationController" id="QnM-xn-NO0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Add" image="Add" selectedImage="Add_selected" id="cRH-Ls-Hae">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="-24" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
@@ -40,39 +41,43 @@
             </objects>
             <point key="canvasLocation" x="2837" y="-2431"/>
         </scene>
-        <!--NavigationProfileController-->
+        <!--ProfileNavigationController-->
         <scene sceneID="LgN-Uv-186">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="NavigationProfileController" id="hmN-Bx-msA" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileNavigationController" id="hmN-Bx-msA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile_Selected" id="NSf-bh-cgo"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydb-Ih-XuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2837" y="-2271"/>
         </scene>
-        <!--UINavigationController-RlM-Qu-euM-->
+        <!--HomeNavigationController-->
         <scene sceneID="B09-vN-150">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="UINavigationController-RlM-Qu-euM" id="lnJ-Uj-CLK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Lcs-Di-dTL"/>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeNavigationController" id="lnJ-Uj-CLK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="Lcs-Di-dTL"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWq-bF-aqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2837" y="-2615"/>
         </scene>
-        <!--HomeTableViewController-->
-        <scene sceneID="DbM-wj-d4o">
+        <!--PrivacyNavigationController-->
+        <scene sceneID="3JD-TU-Xme">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="HomeTableViewController" storyboardName="Home" referencedIdentifier="HomeTableViewController" id="UTv-Wv-vn7" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XTB-dK-S91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Privacy" referencedIdentifier="PrivacyNavigationController" id="FNp-h5-t6Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Privacy" image="info_filled" id="A9f-ZV-lxc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rf4-Hm-yLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3752.8000000000002" y="-2767.4662668665669"/>
+            <point key="canvasLocation" x="2876" y="-2165"/>
         </scene>
     </scenes>
     <resources>
         <image name="Add" width="21" height="21"/>
         <image name="Add_selected" width="21" height="21"/>
+        <image name="Home" width="21" height="23"/>
         <image name="Profile" width="20" height="21"/>
         <image name="Profile_Selected" width="20" height="21"/>
+        <image name="info_filled" width="30" height="30"/>
     </resources>
 </document>

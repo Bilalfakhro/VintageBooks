@@ -15,6 +15,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +41,7 @@ class SignInViewController: UIViewController {
         signInButton.isEnabled = false
         // TEXTFIELDS IS EMPTY FUNCTION
         handleTextField()
+       
     }
     
     // EMPTY TEXTFIELDS , SIGN UP BUTTON DISABALD

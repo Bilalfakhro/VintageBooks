@@ -81,6 +81,13 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func infoButton(_ sender: Any) {
         performSegue(withIdentifier: "profileToInfoSegue", sender: self)
     }
+
+    @IBAction func backToProfileButton(_ sender: Any) {
+        print(1234)
+    }
+    
+    
+    
 }
 
 // CLASS FOR THE CELL FOR THE POSTLABELS
