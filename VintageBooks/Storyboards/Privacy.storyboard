@@ -13,7 +13,7 @@
         <!--Privacy-->
         <scene sceneID="M3G-8v-NjI">
             <objects>
-                <viewController storyboardIdentifier="InfoViewController" id="N1E-93-jWa" customClass="InfoViewController" customModule="VintageBooks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PrivacyViewController" id="N1E-93-jWa" customClass="PrivacyViewController" customModule="VintageBooks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TDT-3l-dre">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -21,14 +21,15 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfO-Gs-Ktq">
                                 <rect key="frame" x="20" y="128" width="374" height="685"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">VINTAGEBOOKS APP PRIVACY POLICY
+                                <string key="text">VINTAGEBOOKS APP PRIVACY POLICY
 
 VINTAGEBOOKS app respects the privacy of our users. 
 This Privacy Policy explains how we collect, use, 
 disclose, and safeguard your information when you 
 visit our mobile application. Please read this Privacy Policy carefully. 
 IF YOU 00 NOT AGREE WITH THE TERMS OF THIS PRIVACY POLICY, PLEASE DO NOT ACCESS THE APPLICATION. 
-We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert 
+
+We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert 
 you about any changes by updating the "Last updated" date of this Privacy Policy. You are encouraged to 
 periodically review this Privacy Policy to stay informed of updates. You will be deemed to have been made 
 aware of, will be subject to, and will be deemed to have accepted the changes in any revised Privacy Policy by your continued use of the Application after the date such revised Privacy Policy is posted. 
@@ -38,8 +39,11 @@ Application or make payments, including any in-game virtual items, which may als
 collected by any such third party. 
 
 Copyright © 2018 VintageBooks, Inc. All rights reserved. 
-No users of VintageBooks may reproduce any copyrighted work in print, video or digital form in violation of the law. Copyrighted works include but are not limited to: 
-algorithms replicating VintageBooks technology, logos, names, taglines, visual wireframes, videos, social media, websites, blogs, images, and training materials. This implies that no one is allowed, by any means, to copy any information or technology property from the app, as well as any ancillary content that relates to VintageBooks at large.</mutableString>
+
+No users of VintageBooks may reproduce any copyrighted work in print, video or digital form in violation of the 
+law. Copyrighted works include but are not limited to: 
+algorithms replicating VintageBooks technology, logos, names, taglines, visual wireframes, videos, social media, websites, blogs, images, and training materials. 
+This implies that no one is allowed, by any means, to copy any information or technology property from the app, as well as any ancillary content that relates to VintageBooks at large.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

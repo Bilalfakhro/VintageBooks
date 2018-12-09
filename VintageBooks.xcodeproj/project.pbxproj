@@ -10,16 +10,16 @@
 		DB27238521ACA73D000CDBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB27238421ACA73D000CDBD5 /* AppDelegate.swift */; };
 		DB27238F21ACA73E000CDBD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27238D21ACA73E000CDBD5 /* LaunchScreen.storyboard */; };
 		DB27239721ACA77B000CDBD5 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239621ACA77B000CDBD5 /* Start.storyboard */; };
-		DB27239E21ACA788000CDBD5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239921ACA787000CDBD5 /* Profile.storyboard */; };
+		DB27239E21ACA788000CDBD5 /* MyBooks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239921ACA787000CDBD5 /* MyBooks.storyboard */; };
 		DB27239F21ACA788000CDBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239A21ACA787000CDBD5 /* Main.storyboard */; };
 		DB2723A121ACA788000CDBD5 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB27239C21ACA788000CDBD5 /* Add.storyboard */; };
 		DB2723A921ACA859000CDBD5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A321ACA858000CDBD5 /* SignUpViewController.swift */; };
-		DB2723AA21ACA859000CDBD5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A421ACA859000CDBD5 /* ProfileViewController.swift */; };
+		DB2723AA21ACA859000CDBD5 /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A421ACA859000CDBD5 /* MyBooksViewController.swift */; };
 		DB2723AB21ACA859000CDBD5 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A521ACA859000CDBD5 /* AddViewController.swift */; };
 		DB2723AD21ACA859000CDBD5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723A721ACA859000CDBD5 /* SignInViewController.swift */; };
 		DB2723B121ACAA6D000CDBD5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB2723B021ACAA6C000CDBD5 /* GoogleService-Info.plist */; };
 		DB2723B621ACB559000CDBD5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2723B521ACB559000CDBD5 /* AuthService.swift */; };
-		DB57CB1B21BA876B008278F0 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57CB1A21BA876B008278F0 /* InfoViewController.swift */; };
+		DB57CB1B21BA876B008278F0 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57CB1A21BA876B008278F0 /* PrivacyViewController.swift */; };
 		DB57CB1D21BA8E54008278F0 /* Privacy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB57CB1C21BA8E54008278F0 /* Privacy.storyboard */; };
 		DB57CB2321BAD0AB008278F0 /* BooksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57CB2221BAD0AB008278F0 /* BooksDetailViewController.swift */; };
 		DB769A9821B829FB00690DBA /* Extenssions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB769A9721B829FB00690DBA /* Extenssions.swift */; };
@@ -29,6 +29,7 @@
 		DBAA071E21B1497500F8998F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA071D21B1497500F8998F /* Post.swift */; };
 		DBAA072021B3441500F8998F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAA071F21B3441500F8998F /* Config.swift */; };
 		DBCBC0FA21BC26F400C045DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCBC0F921BC26F300C045DB /* Assets.xcassets */; };
+		DBF1529821BD7EDE000684F2 /* MyBooksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF1529721BD7EDE000684F2 /* MyBooksDetailViewController.swift */; };
 		F27DF32A6161193471BBEB5E /* Pods_VintageBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D01B477A7F9013F78A7E560 /* Pods_VintageBooks.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,16 +42,16 @@
 		DB27238E21ACA73E000CDBD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB27239021ACA73E000CDBD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB27239621ACA77B000CDBD5 /* Start.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
-		DB27239921ACA787000CDBD5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		DB27239921ACA787000CDBD5 /* MyBooks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyBooks.storyboard; sourceTree = "<group>"; };
 		DB27239A21ACA787000CDBD5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DB27239C21ACA788000CDBD5 /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		DB2723A321ACA858000CDBD5 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		DB2723A421ACA859000CDBD5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DB2723A421ACA859000CDBD5 /* MyBooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
 		DB2723A521ACA859000CDBD5 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		DB2723A721ACA859000CDBD5 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		DB2723B021ACAA6C000CDBD5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB2723B521ACB559000CDBD5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		DB57CB1A21BA876B008278F0 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		DB57CB1A21BA876B008278F0 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		DB57CB1C21BA8E54008278F0 /* Privacy.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Privacy.storyboard; sourceTree = "<group>"; };
 		DB57CB2221BAD0AB008278F0 /* BooksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDetailViewController.swift; sourceTree = "<group>"; };
 		DB769A9721B829FB00690DBA /* Extenssions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenssions.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		DBAA071D21B1497500F8998F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DBAA071F21B3441500F8998F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		DBCBC0F921BC26F300C045DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBF1529721BD7EDE000684F2 /* MyBooksDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBooksDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +134,7 @@
 				DB27239A21ACA787000CDBD5 /* Main.storyboard */,
 				DB78453921B544C300D5A26A /* Home.storyboard */,
 				DB27239C21ACA788000CDBD5 /* Add.storyboard */,
-				DB27239921ACA787000CDBD5 /* Profile.storyboard */,
+				DB27239921ACA787000CDBD5 /* MyBooks.storyboard */,
 				DB57CB1C21BA8E54008278F0 /* Privacy.storyboard */,
 			);
 			path = Storyboards;
@@ -146,8 +148,9 @@
 				DB78453321B53BDA00D5A26A /* HomeTableViewController.swift */,
 				DB57CB2221BAD0AB008278F0 /* BooksDetailViewController.swift */,
 				DB2723A521ACA859000CDBD5 /* AddViewController.swift */,
-				DB2723A421ACA859000CDBD5 /* ProfileViewController.swift */,
-				DB57CB1A21BA876B008278F0 /* InfoViewController.swift */,
+				DB2723A421ACA859000CDBD5 /* MyBooksViewController.swift */,
+				DBF1529721BD7EDE000684F2 /* MyBooksDetailViewController.swift */,
+				DB57CB1A21BA876B008278F0 /* PrivacyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -232,7 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB27239F21ACA788000CDBD5 /* Main.storyboard in Resources */,
-				DB27239E21ACA788000CDBD5 /* Profile.storyboard in Resources */,
+				DB27239E21ACA788000CDBD5 /* MyBooks.storyboard in Resources */,
 				DB2723B121ACAA6D000CDBD5 /* GoogleService-Info.plist in Resources */,
 				DB27238F21ACA73E000CDBD5 /* LaunchScreen.storyboard in Resources */,
 				DB27239721ACA77B000CDBD5 /* Start.storyboard in Resources */,
@@ -305,7 +308,7 @@
 			files = (
 				DB2723AB21ACA859000CDBD5 /* AddViewController.swift in Sources */,
 				DB769A9821B829FB00690DBA /* Extenssions.swift in Sources */,
-				DB2723AA21ACA859000CDBD5 /* ProfileViewController.swift in Sources */,
+				DB2723AA21ACA859000CDBD5 /* MyBooksViewController.swift in Sources */,
 				DB2723AD21ACA859000CDBD5 /* SignInViewController.swift in Sources */,
 				DB2723A921ACA859000CDBD5 /* SignUpViewController.swift in Sources */,
 				DB78453421B53BDA00D5A26A /* HomeTableViewController.swift in Sources */,
@@ -314,7 +317,8 @@
 				DB2723B621ACB559000CDBD5 /* AuthService.swift in Sources */,
 				DB57CB2321BAD0AB008278F0 /* BooksDetailViewController.swift in Sources */,
 				DBAA071E21B1497500F8998F /* Post.swift in Sources */,
-				DB57CB1B21BA876B008278F0 /* InfoViewController.swift in Sources */,
+				DB57CB1B21BA876B008278F0 /* PrivacyViewController.swift in Sources */,
+				DBF1529821BD7EDE000684F2 /* MyBooksDetailViewController.swift in Sources */,
 				DB769A9A21B8474700690DBA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

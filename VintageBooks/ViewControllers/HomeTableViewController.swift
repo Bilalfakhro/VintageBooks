@@ -29,11 +29,7 @@ class HomeTableViewController: UITableViewController {
     func fetchPost() {
         let ref = Database.database().reference()
         ref.child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
-            print(Thread.isMainThread)
             if let Dictionary = snapshot.value as? [String: Any] {
-                let bookTextString = Dictionary["Book_Text"] as! String
-                let bookTitleString = Dictionary["Book_Title"] as! String
-                let bookPhotoUrl = Dictionary["Book_Photo_Url"] as! String
                 let post = Post(Dictionary: Dictionary)
                 self.posts.append(post)
                 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class PrivacyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

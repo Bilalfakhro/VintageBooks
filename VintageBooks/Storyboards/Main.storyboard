@@ -21,7 +21,7 @@
                     <connections>
                         <segue destination="lnJ-Uj-CLK" kind="relationship" relationship="viewControllers" id="nWb-Aj-c4f"/>
                         <segue destination="QnM-xn-NO0" kind="relationship" relationship="viewControllers" id="d2d-7q-MJ6"/>
-                        <segue destination="hmN-Bx-msA" kind="relationship" relationship="viewControllers" id="Hdh-bO-OPu"/>
+                        <segue destination="hmN-Bx-msA" kind="relationship" relationship="viewControllers" id="8rH-zc-XDD"/>
                         <segue destination="FNp-h5-t6Y" kind="relationship" relationship="viewControllers" id="3iU-RG-Pux"/>
                     </connections>
                 </tabBarController>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="2837" y="-2431"/>
         </scene>
-        <!--ProfileNavigationController-->
+        <!--MyBooksNavigationController-->
         <scene sceneID="LgN-Uv-186">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileNavigationController" id="hmN-Bx-msA" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MyBooks" referencedIdentifier="MyBooksNavigationController" id="hmN-Bx-msA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile_Selected" id="NSf-bh-cgo"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydb-Ih-XuC" userLabel="First Responder" sceneMemberID="firstResponder"/>

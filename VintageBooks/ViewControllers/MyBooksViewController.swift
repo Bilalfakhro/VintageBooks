@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  MyBooksViewController.swift
 //  VintageBook
 //
 //  Created by Bilal Fakhro on 2018-11-26.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MyBooksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -32,11 +32,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     // DOWNLOAD THE DATA FROM FIREBASE DATABASE
     func fetchMyPost() {
     Database.database().reference().child("Users").child(Auth.auth().currentUser!.uid).child("Posts").observe(.childAdded) { (snapshot: DataSnapshot) in
-            print(Thread.isMainThread)
         if let Dictionary = snapshot.value as? [String: Any] {
-            let bookTextString = Dictionary["Book_Text"] as! String
-            let bookTitleString = Dictionary["Book_Title"] as! String
-            let bookPhotoUrl = Dictionary["Book_Photo_Url"] as! String
             let post = Post(Dictionary: Dictionary)
             self.posts.append(post)
             
@@ -58,36 +54,32 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         let posten = posts[indexPath.row]
         cell.textLabel?.text = posts[indexPath.row].bookTitle
         cell.detailTextLabel?.text = posts[indexPath.row].bookText
-//
-//        // CREATE A STORAGE REFERENCE FROM FIREBASE STORAGE SERVICE
-//        let storage = Storage.storage()
-//        let imageRef = storage.reference(forURL: posten.photoUrl)
-        
-//        // DOWNLOAD IN MEMORY WITH A MAXIMUM ALLOWED SIZE OF 1MB (1 * 1024 * 1024 BYTES)
-//        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-        let bookPhotoUrl = posten.bookPhotoUrl
+
         if let bookPhotoUrl = posten.bookPhotoUrl {
             cell.bookImageView.loadImageUsingCacheWithUrlString(bookPhotoUrl)
         }
-//        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let myBooksDetailView = storyboard?.instantiateViewController(withIdentifier: "MyBooksDetailViewController") as? MyBooksDetailViewController
+        
+        let postens = posts[indexPath.row]
+        myBooksDetailView?.bookTitleString = posts[indexPath.row].bookTitle!
+        myBooksDetailView?.bookText = posts[indexPath.row].bookText!
+        
+        let bookImageView = UIImageView()
+        if let booksPhotoUrl = postens.bookPhotoUrl {
+            bookImageView.loadImageUsingCacheWithUrlString(booksPhotoUrl)
+        }
+        myBooksDetailView?.bookImage = bookImageView.image!
+        self.navigationController?.pushViewController(myBooksDetailView!, animated: true)
     }
     
     // CELL ROW HEIGHT
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 72
     }
-    
-    @IBAction func infoButton(_ sender: Any) {
-        performSegue(withIdentifier: "profileToInfoSegue", sender: self)
-    }
-
-    @IBAction func backToProfileButton(_ sender: Any) {
-        print(1234)
-    }
-    
-    
-    
 }
 
 // CLASS FOR THE CELL FOR THE POSTLABELS
