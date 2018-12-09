@@ -20,6 +20,8 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        
         // REGISTER THE CLASS FOR THE CELL
         tableView.register(postCell.self, forCellReuseIdentifier: homeCellID)
         fetchPost()
@@ -39,6 +41,17 @@ class HomeTableViewController: UITableViewController {
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     // HOW MANY ROWS IS NEEDED IN THE TABLEVIEW
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,15 +92,15 @@ class HomeTableViewController: UITableViewController {
         self.navigationController?.pushViewController(booksDetailView!, animated: true)
     }
     
-    @IBAction func logOutButtonTapped(_ sender: Any) {
+    @objc func handleLogout() {
         do {
             try Auth.auth().signOut()
         } catch let logoutError {
             print(logoutError)
         }
-        let storyboard = UIStoryboard(name: "Start", bundle: nil)
-        let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
-        self.present(signInVC, animated: false, completion: nil)
+        
+        let loginController = SignInViewController()
+        present(loginController, animated: true, completion: nil)
     }
 }
 

@@ -110,7 +110,12 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             //successfully authenticated user
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference().child("profile_images").child(userID).child("\(imageName).jpeg")
-            if let uploadData = self.profileImage.image?.jpegData(compressionQuality: 0.1) {
+            
+            if let profileImage = self.profileImage.image, let uploadData = profileImage.jpegData(compressionQuality: 0.1)
+            
+            
+//            if let uploadData = self.profileImage.image?.jpegData(compressionQuality: 0.1)
+            {
                 storageRef.putData(uploadData, metadata: nil, completion: { (_, err) in
                     if let error = error {
                         print(error)
@@ -132,7 +137,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     func registerUserIntoDatabaseWithUID(_ uid: String, values: [String: AnyObject]) {
-        let ref = Database.database().reference()
+        let ref = Database.database().reference(fromURL: "https://vintagebooks-f96ea.firebaseio.com/")
         let usersReference = ref.child("Users").child(uid)
         
         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
@@ -140,8 +145,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print(err)
                 return
             }
-            self.dismiss(animated: true
-                , completion: nil)
+            
+            
+            
+            self.dismiss(animated: true, completion: nil)
         })
     }
 

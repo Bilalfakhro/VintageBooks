@@ -139,7 +139,7 @@
         <scene sceneID="xVG-Le-qBJ">
             <objects>
                 <navigationController storyboardIdentifier="AddNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="H00-oV-EaB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" image="Add" selectedImage="Add_selected" id="y0w-bZ-aec"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="plus" id="y0w-bZ-aec"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4SR-ZW-Fwp">
@@ -157,8 +157,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add" width="21" height="21"/>
-        <image name="Add_selected" width="21" height="21"/>
         <image name="placeholder-photo" width="840" height="600"/>
+        <image name="plus" width="30" height="30"/>
     </resources>
 </document>

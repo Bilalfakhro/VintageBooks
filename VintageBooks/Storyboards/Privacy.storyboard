@@ -68,8 +68,11 @@ This implies that no one is allowed, by any means, to copy any information or te
         <scene sceneID="rjN-74-ysL">
             <objects>
                 <navigationController storyboardIdentifier="PrivacyNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="aXv-PW-4MI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Privacy" image="info_filled" id="IwK-Nc-pWn"/>
+                    <tabBarItem key="tabBarItem" title="Privacy" image="info" id="JeN-1V-jAO">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gk1-ss-T78">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -85,6 +88,6 @@ This implies that no one is allowed, by any means, to copy any information or te
         </scene>
     </scenes>
     <resources>
-        <image name="info_filled" width="30" height="30"/>
+        <image name="info" width="30" height="30"/>
     </resources>
 </document>

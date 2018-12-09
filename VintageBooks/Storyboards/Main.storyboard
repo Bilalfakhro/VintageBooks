@@ -33,8 +33,9 @@
         <scene sceneID="wkb-2j-tbw">
             <objects>
                 <viewControllerPlaceholder storyboardName="Add" referencedIdentifier="AddNavigationController" id="QnM-xn-NO0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" image="Add" selectedImage="Add_selected" id="cRH-Ls-Hae">
-                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="-24" maxX="0.0" maxY="0.0"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="" id="cRH-Ls-Hae">
+                        <inset key="imageInsets" minX="0.0" minY="40" maxX="0.0" maxY="40"/>
+                        <inset key="largeContentSizeImageInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSY-0M-hFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -45,7 +46,9 @@
         <scene sceneID="LgN-Uv-186">
             <objects>
                 <viewControllerPlaceholder storyboardName="MyBooks" referencedIdentifier="MyBooksNavigationController" id="hmN-Bx-msA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile_Selected" id="NSf-bh-cgo"/>
+                    <tabBarItem key="tabBarItem" title="" id="NSf-bh-cgo">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-34"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydb-Ih-XuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,7 +58,7 @@
         <scene sceneID="B09-vN-150">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeNavigationController" id="lnJ-Uj-CLK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="Lcs-Di-dTL"/>
+                    <tabBarItem key="tabBarItem" title="" id="Lcs-Di-dTL"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWq-bF-aqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,19 +68,13 @@
         <scene sceneID="3JD-TU-Xme">
             <objects>
                 <viewControllerPlaceholder storyboardName="Privacy" referencedIdentifier="PrivacyNavigationController" id="FNp-h5-t6Y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Privacy" image="info_filled" id="A9f-ZV-lxc"/>
+                    <tabBarItem key="tabBarItem" title="" id="A9f-ZV-lxc">
+                        <inset key="imageInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rf4-Hm-yLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2876" y="-2165"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Add" width="21" height="21"/>
-        <image name="Add_selected" width="21" height="21"/>
-        <image name="Home" width="21" height="23"/>
-        <image name="Profile" width="20" height="21"/>
-        <image name="Profile_Selected" width="20" height="21"/>
-        <image name="info_filled" width="30" height="30"/>
-    </resources>
 </document>
