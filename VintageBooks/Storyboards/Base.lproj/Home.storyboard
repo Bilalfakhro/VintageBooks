@@ -41,7 +41,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKk-FU-UNO">
                                 <rect key="frame" x="75" y="119" width="264" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="RF7-Sq-U20"/>
                                 </constraints>
@@ -50,13 +49,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vcn-sK-kCU">
-                                <rect key="frame" x="43.5" y="398" width="327" height="344"/>
-                                <color key="backgroundColor" red="1" green="0.83209832080000001" blue="0.12563552589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="43.5" y="358" width="327" height="454"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-photo" translatesAutoresizingMaskIntoConstraints="NO" id="REB-QG-MtF">
-                                <rect key="frame" x="87" y="213" width="240" height="135"/>
+                                <rect key="frame" x="87" y="193" width="240" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="REB-QG-MtF" secondAttribute="height" multiplier="16:9" id="QAn-1l-IEL"/>
                                 </constraints>
@@ -65,15 +63,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JKk-FU-UNO" firstAttribute="leading" secondItem="WVL-97-MrZ" secondAttribute="leading" constant="75" id="1dl-nl-Ytg"/>
-                            <constraint firstItem="REB-QG-MtF" firstAttribute="top" secondItem="JKk-FU-UNO" secondAttribute="bottom" constant="50" id="ELM-tT-Puz"/>
+                            <constraint firstItem="REB-QG-MtF" firstAttribute="top" secondItem="JKk-FU-UNO" secondAttribute="bottom" constant="30" id="ELM-tT-Puz"/>
                             <constraint firstItem="WVL-97-MrZ" firstAttribute="trailing" secondItem="REB-QG-MtF" secondAttribute="trailing" constant="87" id="Hge-V3-W7H"/>
                             <constraint firstItem="REB-QG-MtF" firstAttribute="leading" secondItem="WVL-97-MrZ" secondAttribute="leading" constant="87" id="IQj-dk-OWx"/>
                             <constraint firstItem="JKk-FU-UNO" firstAttribute="top" secondItem="WVL-97-MrZ" secondAttribute="top" constant="75" id="U7l-xk-4Ad"/>
                             <constraint firstItem="WVL-97-MrZ" firstAttribute="trailing" secondItem="vcn-sK-kCU" secondAttribute="trailing" constant="43.5" id="YdA-we-nXz"/>
-                            <constraint firstItem="WVL-97-MrZ" firstAttribute="bottom" secondItem="vcn-sK-kCU" secondAttribute="bottom" constant="120" id="iYX-cM-x4l"/>
+                            <constraint firstItem="WVL-97-MrZ" firstAttribute="bottom" secondItem="vcn-sK-kCU" secondAttribute="bottom" constant="50" id="iYX-cM-x4l"/>
                             <constraint firstItem="vcn-sK-kCU" firstAttribute="leading" secondItem="WVL-97-MrZ" secondAttribute="leading" constant="43.5" id="kNf-XT-3Gj"/>
                             <constraint firstItem="JKk-FU-UNO" firstAttribute="centerX" secondItem="kPb-Qt-q0Q" secondAttribute="centerX" id="rSE-5G-Pgf"/>
-                            <constraint firstItem="vcn-sK-kCU" firstAttribute="top" secondItem="REB-QG-MtF" secondAttribute="bottom" constant="50" id="xkW-h5-33z"/>
+                            <constraint firstItem="vcn-sK-kCU" firstAttribute="top" secondItem="REB-QG-MtF" secondAttribute="bottom" constant="30" id="xkW-h5-33z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WVL-97-MrZ"/>
                     </view>
@@ -90,7 +88,6 @@
         <!--Home-->
         <scene sceneID="j7c-1h-Ni3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5hs-Sa-iGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="RlM-Qu-euM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Home" selectedImage="Home_Selected" id="1zx-Py-2Ed"/>
                     <toolbarItems/>
@@ -104,6 +101,7 @@
                         <segue destination="Dg5-e4-KR7" kind="relationship" relationship="rootViewController" id="zoK-yr-201"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hs-Sa-iGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2813.5999999999999" y="-2767.4662668665669"/>
         </scene>

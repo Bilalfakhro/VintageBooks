@@ -68,23 +68,18 @@ class HomeTableViewController: UITableViewController {
         return 80
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let booksDetailView = storyboard?.instantiateViewController(withIdentifier: "BooksDetailViewController") as? BooksDetailViewController
         
         let postens = posts[indexPath.row]
         booksDetailView?.bookTitleString = posts[indexPath.row].bookTitle!
         booksDetailView?.bookText = posts[indexPath.row].bookText!
-//        booksDetailView?.bookImage = posts[indexPath.row].bookPhotoUrl
         
         let bookImageView = UIImageView()
         if let booksPhotoUrl = postens.bookPhotoUrl {
            bookImageView.loadImageUsingCacheWithUrlString(booksPhotoUrl)
         }
         booksDetailView?.bookImage = bookImageView.image!
-        
-        
-  
         self.navigationController?.pushViewController(booksDetailView!, animated: true)
     }
     
