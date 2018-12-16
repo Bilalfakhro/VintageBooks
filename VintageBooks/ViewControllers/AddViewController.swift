@@ -19,6 +19,9 @@ class AddViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     
     var selectedPhoto: UIImage?
+    
+    var users = [User]()
+    
     var ref: DatabaseReference?
     let userID = Auth.auth().currentUser?.uid
 
@@ -63,7 +66,7 @@ class AddViewController: UIViewController {
     
     @IBAction func shareButton_TouchUpInside(_ sender: Any) {
         view.endEditing(true)
-        if let uploadData = selectedPhoto?.jpegData(compressionQuality: 0.1) {
+        if let selectedPhoto = bookPhotoImageView.image, let uploadData = selectedPhoto.jpegData(compressionQuality: 0.1) {
             let imageName = NSUUID().uuidString
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("Book_Photo").child(userID!).child(imageName)
             storageRef.putData(uploadData, metadata: nil, completion: { (_, error) in

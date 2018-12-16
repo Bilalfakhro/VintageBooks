@@ -11,6 +11,4 @@ target 'VintageBooks' do
     pod 'Firebase/Storage'
     pod 'Firebase/Database'
 
-
-
 end

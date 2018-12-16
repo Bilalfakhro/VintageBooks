@@ -20,35 +20,11 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     var selectedImageFromPicker: UIImage?
 
+    var ref: DatabaseReference?
+    let userID = Auth.auth().currentUser?.uid
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nameTextField.backgroundColor = UIColor.clear
-        nameTextField.tintColor = UIColor.white
-        nameTextField.textColor = UIColor.white
-        nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
-        let bottomLayerUsername = CALayer()
-        bottomLayerUsername.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
-        bottomLayerUsername.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-        nameTextField.layer.addSublayer(bottomLayerUsername)
-        
-        emailTextField.backgroundColor = UIColor.clear
-        emailTextField.tintColor = UIColor.white
-        emailTextField.textColor = UIColor.white
-        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
-        let bottomLayerEmail = CALayer()
-        bottomLayerEmail.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
-        bottomLayerEmail.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-        emailTextField.layer.addSublayer(bottomLayerEmail)
-        
-        passwordTextField.backgroundColor = UIColor.clear
-        passwordTextField.tintColor = UIColor.white
-        passwordTextField.textColor = UIColor.white
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordTextField.placeholder!, attributes: [NSAttributedString.Key.foregroundColor: UIColor(white: 1.0, alpha: 0.6)])
-        let bottomLayerPassword = CALayer()
-        bottomLayerPassword.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
-        bottomLayerPassword.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
-        passwordTextField.layer.addSublayer(bottomLayerPassword)
         
          //CLICK PROFILE IMAGE FOR CHANGE PICTURE
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
@@ -90,46 +66,42 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func signUpButtonTapped(_ sender: Any) {
         view.endEditing(true)
         guard let name = nameTextField.text,
-            let email = emailTextField.text,
-            let password = passwordTextField.text
-            else {
-            print("Form is not valid")
-            return
+        let email = emailTextField.text,
+        let password = passwordTextField.text
+        else {
+        print("Form is not valid")
+        return
         }
     
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion:{ (user, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            // FIREBASE DATABASE
-            guard let userID = user?.user.uid
+    Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion:{ (user, error) in
+        if error != nil {
+            print(error!.localizedDescription)
+            return
+        }
+        // FIREBASE DATABASE
+        guard let userID = user?.user.uid
             else {
                 return
             }
-            //successfully authenticated user
-            let imageName = NSUUID().uuidString
-            let storageRef = Storage.storage().reference().child("profile_images").child(userID).child("\(imageName).jpeg")
+        //successfully authenticated user
+        let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("profile_images").child(userID).child("\(imageName).jpeg")
             
-            if let profileImage = self.profileImage.image, let uploadData = profileImage.jpegData(compressionQuality: 0.1)
-            
-            
-//            if let uploadData = self.profileImage.image?.jpegData(compressionQuality: 0.1)
-            {
-                storageRef.putData(uploadData, metadata: nil, completion: { (_, err) in
-                    if let error = error {
-                        print(error)
-                        return
-                    }
-                    storageRef.downloadURL(completion: { (url, err) in
-                        if let err = err {
-                            print(err)
-                            return
-                        }
-                        guard let url = url else { return }
-                        let values = ["Name": name, "Email": email, "Profile_Image_Url": url.absoluteString]
+        if let profileImage = self.profileImage.image, let uploadData = profileImage.jpegData(compressionQuality: 0.1) {
+            storageRef.putData(uploadData, metadata: nil, completion: { (_, err) in
+            if let error = error {
+                print(error)
+                return
+            }
+            storageRef.downloadURL(completion: { (url, err) in
+            if let err = err {
+                print(err)
+                return
+            }
+    guard let url = url else { return }
+        let values = ["Name": name, "Email": email, "Profile_Image_Url": url.absoluteString]
                         
-                        self.registerUserIntoDatabaseWithUID(userID, values: values as [String : AnyObject])
+        self.registerUserIntoDatabaseWithUID(userID, values: values as [String : AnyObject])
                     })
                 })
             }
@@ -137,17 +109,14 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     func registerUserIntoDatabaseWithUID(_ uid: String, values: [String: AnyObject]) {
-        let ref = Database.database().reference(fromURL: "https://vintagebooks-f96ea.firebaseio.com/")
-        let usersReference = ref.child("Users").child(uid)
+        let ref = Database.database().reference()
+        let usersReference = ref.child("Users").child(userID!)
         
         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
             if let err = err {
                 print(err)
                 return
             }
-            
-            
-            
             self.dismiss(animated: true, completion: nil)
         })
     }
@@ -159,6 +128,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.allowsEditing = true
 
         present(picker, animated: true, completion: nil)
+    }
+    
+    @IBAction func dismiss_onClick(_ sender: Any) {
+        dismiss(animated: false, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -177,13 +150,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("canceled picker")
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func dismiss_onClick(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    
 }
 
 // Helper function inserted by Swift 4.2 migrator.

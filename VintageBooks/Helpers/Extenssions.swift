@@ -6,7 +6,6 @@
 //  Copyright © 2018 Bilal Fakhro. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 let imageCache = NSCache<NSString, AnyObject>()

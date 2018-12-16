@@ -17,8 +17,5 @@ class Post: NSObject {
         self.bookText = Dictionary["Book_Text"] as? String
         self.bookTitle = Dictionary["Book_Title"] as? String
         self.bookPhotoUrl = Dictionary["Book_Photo_Url"] as? String
-//        bookText = bookTextString
-//        photoUrl = photoUrlString
-//        bookTitle = bookTitleString
     }
 }

@@ -45,7 +45,6 @@ class MyBooksViewController: UIViewController, UITableViewDataSource, UITableVie
             //for some reason uid = nil
             return
         }
-        
         Database.database().reference().child("Users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
@@ -102,15 +101,13 @@ class MyBooksViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @objc func handleLogout() {
-        
         do {
             try Auth.auth().signOut()
         } catch let logoutError {
             print(logoutError)
         }
-        
-        let loginController = SignInViewController()
-        present(loginController, animated: true, completion: nil)
+        let SignInController = SignInViewController()
+        present(SignInController, animated: true, completion: nil)
     }
     
     // DOWNLOAD THE DATA FROM FIREBASE DATABASE
@@ -166,6 +163,7 @@ class MyBooksViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 }
 
+//---------------------------------------------//
 // CLASS FOR THE CELL FOR THE POSTLABELS
 class myPostCell: UITableViewCell {
     

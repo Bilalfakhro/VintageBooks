@@ -75,7 +75,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Tet-Xc-buy"/>
                                 </constraints>
                                 <state key="normal" title="Don't have an account?">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dontHaveAccountButton:" destination="NOT-nf-hw0" eventType="touchUpInside" id="nHh-9V-KpH"/>
@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="I5C-1a-FPr" firstAttribute="leading" secondItem="i0B-F0-EFA" secondAttribute="leading" id="0Tw-3w-sqS"/>
                             <constraint firstItem="nmv-iZ-ely" firstAttribute="top" secondItem="I5C-1a-FPr" secondAttribute="bottom" id="8UG-1B-LMC"/>
@@ -181,7 +181,7 @@
                                     <constraint firstAttribute="height" constant="44" id="0CH-dv-rf0"/>
                                 </constraints>
                                 <state key="normal" title="Already have an account? Sign In">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismiss_onClick:" destination="Aeg-lA-Jwm" eventType="touchUpInside" id="YlV-3F-Gdo"/>
@@ -191,7 +191,7 @@
                                 <rect key="frame" x="127.5" y="80" width="120" height="112"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ZtA-ip-yd2" firstAttribute="leading" secondItem="zZ9-1U-Bed" secondAttribute="leading" constant="127.5" id="0Bt-R3-MUF"/>
                             <constraint firstItem="zZ9-1U-Bed" firstAttribute="trailing" secondItem="ZtA-ip-yd2" secondAttribute="trailing" constant="127.5" id="3KN-Jm-j28"/>
@@ -232,6 +232,6 @@
         <image name="placeholderImg" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xIW-IA-rBK"/>
+        <segue reference="Thh-3t-V55"/>
     </inferredMetricsTieBreakers>
 </document>

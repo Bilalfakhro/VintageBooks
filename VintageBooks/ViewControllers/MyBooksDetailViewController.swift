@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MyBooksDetailViewController: UIViewController {
     
@@ -18,6 +19,11 @@ class MyBooksDetailViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
 
     var posts = [Post]()
+    
+    var users = [User]()
+    
+    var ref: DatabaseReference?
+    let userID = Auth.auth().currentUser?.uid
     
     var bookTitleString = ""
     var bookText = ""
